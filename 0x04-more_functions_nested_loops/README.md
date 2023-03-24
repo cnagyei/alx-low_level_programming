@@ -439,7 +439,7 @@ Write a function that prints an integer.
 - You are not allowed to use arrays or pointers
 - You are not allowed to hard-code special values
 
-```
+```sh
 julien@ubuntu:~/0x04$ cat 101-main.c
 #include "main.h"
 
