@@ -8,6 +8,11 @@
 - [What is the purpose of a function prototype?](https://www.geeksforgeeks.org/what-is-the-purpose-of-a-function-prototype/)
 - [C - Header Files](https://www.tutorialspoint.com/cprogramming/c_header_files.htm) (*stop before the "Once-Only Headers" paragraph*)
 
+## General Requirements
+
+- `Betty` style - [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
+- You are allowed to use [`_putchar`](https://github.com/holbertonschool/_putchar.c/blob/master/_putchar.c)
+
 ## Learning Objectives
 
 - What are nested loops and how to use them
