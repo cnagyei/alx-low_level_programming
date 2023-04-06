@@ -6,7 +6,7 @@
  *
  * @n: Pointer to an int to be changed.
  *
- * Return: Value the pointer points to (98).
+ * Return: Void. 
  */
 void reset_to_98(int *n)
 {
