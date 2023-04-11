@@ -9,7 +9,7 @@
  */
 void rev_string(char *s)
 {
-	char a[100];
+	char a[1000];
 	char *cpy;	/* Pointer to copy string to */
 	int len;
 	char *p = s;
