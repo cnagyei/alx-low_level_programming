@@ -12,7 +12,7 @@ void rev_string(char *s)
 	char a[1000];		/* Large array - used as copy of s */
 	char *cpy;		/* Pointer to a, the array copy of s */
 	int len;		/* To determine length of s */
-	char *p = s;
+	char *p = s;		/* Another pointer to use to determine length of s */
 
 	cpy = &a[0];		/* Assign pointer to first element of a */
 
