@@ -1,5 +1,8 @@
 # 0x0B. C - malloc, free
 
+## Concepts
+- [Automatic and dynamic allocation, malloc and free](https://drive.google.com/file/d/11rXU1E57eaBjE4gbjDw3ZTP9wDu8zD4d/view?usp=share_link)
+
 ## Resources
 
 - [0x0a - malloc & free - quick overview.pdf](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/misc/2021/1/a094c90e7f466bbeaa49cb24c8f04e7f27aaad41.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230412T005129Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=092f0934ed3cfe22aed4c8c1bd892b4f8c6fb68a96d364ea59df6fcf5494b348)
