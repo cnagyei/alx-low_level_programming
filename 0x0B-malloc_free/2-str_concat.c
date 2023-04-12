@@ -42,11 +42,11 @@ char *str_concat(char *s1, char *s2)
 		/* Fill new_str with s1 string */
 		if (s1 != NULL)
 			while (*s1 != '\0' && s1 != NULL)
-				{
-					*new_str = *s1;
-					s1++;
-					new_str++;
-				}
+			{
+				*new_str = *s1;
+				s1++;
+				new_str++;
+			}
 		/* Fill new_str with s2 string */
 		if (s2 != NULL)
 			while ((*new_str++ = *s2++))
