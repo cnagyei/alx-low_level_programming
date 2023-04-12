@@ -20,16 +20,16 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 
 	arr = malloc(sizeof(char) * size);
-	while (i < size)
+
+	if (arr != NULL)
 	{
-		*(arr + i) = c;			/* Same as arr[i] */
-		i++;
+		while (i < size)
+		{
+			*(arr + i) = c;			/* Same as arr[i] */
+			i++;
+		}
 	}
 
-	if (arr == NULL)
-		return (NULL);
-	else
-		return (arr);
-
+	return (arr);
 	free(arr);
 }
