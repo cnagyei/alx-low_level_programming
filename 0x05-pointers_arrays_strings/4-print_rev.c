@@ -23,6 +23,7 @@ void print_rev(char *s)
 	 * s is already on the null byte while len is one step before len
 	 * To have s point to the very first item, s[0], len must loop to 0
 	 */
+	s--;
 	for ( ; len >= 0; s--)
 	{
 		_putchar(*s);
