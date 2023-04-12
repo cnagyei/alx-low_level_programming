@@ -19,6 +19,8 @@ char *str_concat(char *s1, char *s2)
 	char *new_str;
 	char *p = s1;
 	int len_s1, len_s2, len_tot;
+	int i;
+	char *a = "";		/* Empty string */
 
 	/* Determine length of s1 without null byte */
 	while (*p != '\0')
@@ -41,16 +43,34 @@ char *str_concat(char *s1, char *s2)
 	{
 		/* Fill new_str with s1 string */
 		if (s1 != NULL)
-			while (*s1 != '\0' && s1 != NULL)
+			while (*s1 != '\0')
 			{
 				*new_str = *s1;
 				s1++;
 				new_str++;
 			}
+		else
+		{
+			for (i = 0; i < len_s1; i++)
+			{
+				*(new_str + i) = *a;
+				new_str++;
+			}
+			new_str--;
+		}
 		/* Fill new_str with s2 string */
 		if (s2 != NULL)
 			while ((*new_str++ = *s2++))
 				;
+		else
+		{
+			for (i = 0; i < len_s2; i++)
+			{
+				*(new_str + i) = *a;
+				new_str++;
+			}
+			*new_str = '\0';
+		}
 		/* Bring pointer to the start position */
 		new_str -= len_tot;
 	}
