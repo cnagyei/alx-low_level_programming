@@ -25,11 +25,11 @@ char *create_array(unsigned int size, char c)
 		*(arr + i) = c;			/* Same as arr[i] */
 		i++;
 	}
-	
+
 	if (arr == NULL)
 		return (NULL);
 	else
 		return (arr);
-	
+
 	free(arr);
 }
