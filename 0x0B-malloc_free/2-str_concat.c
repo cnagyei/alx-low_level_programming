@@ -20,29 +20,20 @@ char *str_concat(char *s1, char *s2)
 	char *p = s1;
 	int len_s1, len_s2, len_tot;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
 	/* Determine length of s1 without null byte */
 	while (*p != '\0')
 		p++;
 	len_s1 = p - s1;
-
 	/* Determine length of s2 without null byte */
 	p = s2;
 	while (*p != '\0')
 		p++;
 	len_s2 = p - s2;
-
 	/* Determine total length plus null byte of s2 */
 	len_tot = len_s1 + (len_s2 + 1);
-
 	/* Allocate new space in memory */
 	new_str = malloc(sizeof(char) * len_tot);
-
+	
 	if (new_str != NULL)
 	{
 		/* Fill new_str with s1 string */
@@ -56,8 +47,8 @@ char *str_concat(char *s1, char *s2)
 		while ((*new_str++ = *s2++))
 			;
 		/* Bring pointer to the start position */
+		new_str -= len_tot;
 	}
-	new_str -= len_tot;
 	return (new_str);
 	free(new_str);
 }
