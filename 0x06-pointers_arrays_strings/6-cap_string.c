@@ -24,11 +24,19 @@ char *cap_string(char *str)
 	while (*str != '\0')
 	{
 		/* check for separators */
-		if (*str == ' ' || *str == '\t' || *str  == '\n' ||
-				*str == ',' || *str == ';' || *str == '.' ||
-				*str == '?' || *str == '"' || *str == '(' ||
-				*str == ')' || *str == '{' || *str == '}' ||
-				*str == '!')
+		if (*str == ' ' ||
+				*str == '\t' ||
+				*str  == '\n' ||
+				*str == ',' ||
+				*str == ';' ||
+				*str == '.' ||
+				*str == '!' ||
+				*str == '?' ||
+				*str == '"' ||
+				*str == '(' ||
+				*str == ')' ||
+				*str == '{' ||
+				*str == '}')
 			/*
 			 * if separator, check the next character for
 			 * lowercase and convert
