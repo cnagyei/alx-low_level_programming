@@ -12,10 +12,11 @@ char *rot13(char *str)
 
 	while (*str != '\0')
 	{
-		for ( ; (*str >= 'A' || *str >= 'a') &&
-				(*str <= 'Z' || *str <= 'z'); str++)
+		for ( ; (*str >= 'A' && *str <= 'Z') ||
+				(*str >= 'a' && *str <= 'z'); str++)
 		{
-			if (*str <= 'M' || *str <= 'm')
+			if ((*str >= 'A' && *str <= 'M') ||
+					(*str >= 'a' && *str <= 'm'))
 				*str += 13;
 			else
 				*str -= 13;
