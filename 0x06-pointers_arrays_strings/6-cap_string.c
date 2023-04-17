@@ -2,7 +2,7 @@
 
 /**
  * cap_string - capitalize all words of a string
- * @str - string
+ * @str: string
  *
  * Return: pointer to the string
  */
@@ -24,13 +24,13 @@ char *cap_string(char *str)
 	while (*str != '\0')
 	{
 		/* check for separators */
-		if (*str == ' ' || *str == '\t' || *str  == '\n' || 
+		if (*str == ' ' || *str == '\t' || *str  == '\n' ||
 				*str == ',' || *str == ';' || *str == '.' ||
 				*str == '?' || *str == '"' || *str == '(' ||
 				*str == ')' || *str == '{' || *str == '}' ||
 				*str == '!')
-			/* 
-			 * if separator, check the next character for 
+			/*
+			 * if separator, check the next character for
 			 * lowercase and convert
 			 */
 			if (*(str + 1) >= 'a' && *(str + 1) <= 'z')
