@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	/* 
+	/*
 	 * if number is smaller than 0, put a - sign and
 	 * change number to positive
 	 */
