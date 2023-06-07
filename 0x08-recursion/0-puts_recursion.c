@@ -14,7 +14,6 @@ void _puts_recursion(char *s)
 		_putchar('\n');
 		return;
 	}
-	
 	_putchar(*s);		/* print first character */
 	s++;			/* move pointer to next character */
 	_puts_recursion(s);	/* make recursive call */
