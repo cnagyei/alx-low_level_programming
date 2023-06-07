@@ -8,13 +8,14 @@
  */
 void _puts_recursion(char *s)
 {
+	/* print a new line when EOF */
 	if (*s == '\0')
 	{
 		_putchar('\n');
 		return;
 	}
-
-	_putchar(*s);
-	s++;
-	_puts_recursion(s);
+	
+	_putchar(*s);		/* print first character */
+	s++;			/* move pointer to next character */
+	_puts_recursion(s);	/* make recursive call */
 }
