@@ -2,7 +2,7 @@
 
 /**
  * _strlen_recursion - return the length of a string
- * @a: the string
+ * @s: the string
  *
  * Return: number of characters in string (int)
  */
