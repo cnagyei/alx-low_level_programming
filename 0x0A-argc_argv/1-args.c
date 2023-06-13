@@ -8,7 +8,7 @@
  * @argc: total count of arguments
  * @argv: array of pointer to char of all arguments
  *
- * Return: Int
+ * Return: Always success
  */
 int main(int argc, char __attribute__((__unused__)) **argv)
 {
