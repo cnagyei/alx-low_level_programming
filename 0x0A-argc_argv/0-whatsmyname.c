@@ -6,9 +6,9 @@
  * @argc: total count of arguments
  * @argv: array of pointer to char of all arguments
  *
- * Return:
+ * Return: Int
  */
-int main (int __attribute__((__unused__)) argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char **argv)
 {
 	printf("%s\n", argv[0]);
 	exit(EXIT_SUCCESS);
