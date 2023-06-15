@@ -44,8 +44,8 @@ char *_strdup(char *str)
 	{
 		while ((*dup_string++ = *str++))
 			;
+		dup_string -= (len + 1);
 	}
-	dup_string -= (len + 1);
 
 	return (dup_string);
 	free(dup_string);
