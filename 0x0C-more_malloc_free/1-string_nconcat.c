@@ -10,7 +10,7 @@
 int _strlen(char *s)
 {
 	char *p = s;
-	
+
 	while (*p != '\0')
 		p++;
 	return (p - s);
@@ -35,23 +35,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*s1 = ' ';
 	if (s2 == NULL)
 		*s2 = ' ';
-
 	/* length of s1 */
 	len1 = _strlen(s1);
-
 	/* length of s2 */
 	len2 = _strlen(s2);
-
 	/* allocate memory */
 	str = malloc((sizeof(char) * (len1 + n)) + 1);
-
 	if (str == NULL)
-		return NULL;
-
+		return (NULL);
 	/* copy s1 into str */
 	while ((*str++ = *s1++))
 		;
-
 	/* copy s2 into str to add to s1 */
 	if (n < len2)
 	{
@@ -68,7 +62,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*str = '\0';
 		str -= (len1 + len2 + 1);
 	}
-	
 	return (str);
 	free(str);
 }
