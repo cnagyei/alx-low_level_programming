@@ -4,7 +4,7 @@
 
 /**
  * _strlen - determine number of characters in string
- * @str: string
+ * @s: string
  *
  * Return: int - number of characters
  */
