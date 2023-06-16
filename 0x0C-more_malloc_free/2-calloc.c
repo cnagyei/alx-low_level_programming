@@ -18,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	/* allocate memory */
 	newArray = malloc((nmemb * size) + 1);
-	
+
 	/* initialize with zero */
 	if (newArray != NULL)
 	{
