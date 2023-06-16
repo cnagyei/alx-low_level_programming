@@ -10,22 +10,22 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *array;
+	char *newArray;
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
 	/* allocate memory */
-	array = malloc(nmemb * size);
+	newArray = malloc(nmemb * size);
 
-	if (array == NULL)
+	if (newArray == NULL)
 		return (NULL);
 
 	/* initialize with zero */
 	for (i = 0; i < nmemb; i++)
-		*(array + i) = 0;
+		*(newArray + i) = 0;
 
-	return (array);
-	free(array);
+	return (newArray);
+	free(newArray);
 }
