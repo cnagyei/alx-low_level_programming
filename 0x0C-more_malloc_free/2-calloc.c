@@ -17,14 +17,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	/* allocate memory */
-	newArray = malloc((nmemb * size) + 1);
+	newArray = malloc(nmemb * size);
 
-	/* initialize with zero */
-	if (newArray != NULL)
-	{
-		for (i = 0; i < nmemb; i++)
-			*(newArray + i) = 0;
-	}
+	if (newArray == NULL)
+		return (NULL);
+
+	/* set memory - initialize with zero */
+	for (i = 0; i < nmemb; i++)
+		*(newArray + i) = 0;
+	
 	return (newArray);
 	free(newArray);
 }
