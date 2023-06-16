@@ -30,19 +30,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *str;
 	unsigned int i, len1, len2;
 
-	/* when NULL is passed */
 	if (s1 == NULL)
 		*s1 = ' ';
 	if (s2 == NULL)
 		*s2 = ' ';
-	/* length of s1 */
+	
 	len1 = _strlen(s1);
-	/* length of s2 */
 	len2 = _strlen(s2);
-	/* allocate memory */
+	
 	str = malloc((sizeof(char) * (len1 + n)) + 1);
 	if (str == NULL)
 		return (NULL);
+	
 	/* copy s1 into str */
 	while ((*str++ = *s1++))
 		;
