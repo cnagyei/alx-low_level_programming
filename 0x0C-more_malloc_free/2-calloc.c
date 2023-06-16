@@ -27,5 +27,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		*(newArray + i) = 0;
 	
 	return (newArray);
-	free(newArray);
 }
