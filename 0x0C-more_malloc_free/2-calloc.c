@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (newArray == NULL)
 		return (NULL);
 
-	/* 
+	/*
 	 * set memory - initialize with zero using full bytes span:
 	 * nmbemb * size
 	 */
