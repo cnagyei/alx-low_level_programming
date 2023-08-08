@@ -52,16 +52,21 @@ char *str_concat(char *s1, char *s2)
 	/* allocate a block of memory */
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 
-	/* p = new_str; */
-
 	if (new_str != NULL)
 	{
-		/* copy s1 to new location */
+		/* 
+		 * copy s1 to new location
+		 * this does NOT MOVE new_str and s1 because _strcpy is a calling function
+		 */
 		_strcpy(new_str, s1);
-		new_str += len1;
+		new_str += len1;   /* jump to end of first string (null byte) */
 
+		/* 
+		 * copy s2 to new location
+		 * this does NOT MOVE new_str and s2 because _strcpy is a calling function
+		 */
 		_strcpy(new_str, s2);
-		new_str -= len1;
+		new_str -= len1;  /* jumb BACK to start of memory block */
 	}
 	return (new_str);
 	free(new_str);
