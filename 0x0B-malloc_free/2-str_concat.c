@@ -51,7 +51,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* allocate a block of memory */
 	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
-	
+
 	/* p = new_str; */
 
 	if (new_str != NULL)
