@@ -42,9 +42,6 @@ char *str_concat(char *s1, char *s2)
 	char *new_str;
 	int len1, len2;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-
 	/* calculate lengths of s1 and s2 */
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
