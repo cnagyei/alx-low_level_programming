@@ -51,6 +51,9 @@ char *str_concat(char *s1, char *s2)
 
 	if (new_str != NULL)
 	{
+		if (s1 == NULL && s2 == NULL)
+			return (new_str);
+
 		/*
 		 * copy s1 to new location
 		 * this does NOT MOVE new_str and s1 because _strcpy is a calling function
