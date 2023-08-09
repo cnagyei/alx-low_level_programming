@@ -55,15 +55,22 @@ char *str_concat(char *s1, char *s2)
 		 * copy s1 to new location
 		 * this does NOT MOVE new_str and s1 because _strcpy is a calling function
 		 */
-		_strcpy(new_str, s1);
-		new_str += len1;   /* jump to end of first string (null byte) */
+		if (s1 != NULL)
+		{
+			_strcpy(new_str, s1);
+			new_str += len1;   /* jump to end of first string (null byte) */
+		}
 
 		/*
 		 * copy s2 to new location
 		 * this does NOT MOVE new_str and s2 because _strcpy is a calling function
 		 */
-		_strcpy(new_str, s2);
-		new_str -= len1;  /* jumb BACK to start of memory block */
+		if (s2 != NULL)
+		{
+			_strcpy(new_str, s2);
+			if (s1 != NULL)
+				new_str -= len1;  /* jumb BACK to start of memory block */
+		}
 	}
 	return (new_str);
 	free(new_str);
