@@ -33,7 +33,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			loop = loop->next;
 		else
 		{
+			/* make next of the previous node next of new node*/
 			new_node->next = loop->next;
+
+			/* point next of previous node to new node */
 			loop->next = new_node;
 		}
 	}
