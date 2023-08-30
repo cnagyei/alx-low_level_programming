@@ -4,7 +4,6 @@
  * delete_nodeint_at_index - deletes node at index
  * @head: pointer to pointer to the head of the list
  * @index: index of the list where the node should be deleted
- * @n: data for new node
  *
  * Return: 1 if it succeeded, -1 if it failed
  */
@@ -12,7 +11,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *check;
 	listint_t *loop = *head;
-	unsigned int i;
+	unsigned int i, j;
 
 	if (*head == NULL)
 		return (NULL);
@@ -21,16 +20,16 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		if (loop->next == NULL)
 			return (-1);
-		if (i != (index - 1))
-			loop = loop->next;
-		else
+		loop = loop->next;
+		check = loop;
+		for (j = 0; j < 1; j++)
 		{
-			/* make next of the previous node next of new node*/
-			new_node->next = loop->next;
-
-			/* point next of previous node to new node */
-			loop->next = new_node;
+			check->next;
+			if (check == NULL)
+				return (-1);
 		}
+		free(loop);
+		
 	}
 
 	return (1);
