@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - returns the number of elements in a linked list
+ * add_nodeint - returns the number of elements in a linked list
  * @head: pointer to pointer to the head of the list
  * @n: new integer data for node
  *
