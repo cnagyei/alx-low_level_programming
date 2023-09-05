@@ -13,8 +13,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd; /* declare int value for file descriptor */
 	char *buffer; /* space in memory to write file to */
-	ssize_t count_read, count_write; /* save return values of read()
-					   and write() */
+	/* to save return values of read() and write() */
+	ssize_t count_read, count_write;
 
 	/*
 	 * open file to save return value (file descriptor)
@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (buffer == NULL)
 		return (0);
-	
+
 	/* read bytes from file descriptor into buffer */
 	count_read = read(fd, buffer, letters);
 
