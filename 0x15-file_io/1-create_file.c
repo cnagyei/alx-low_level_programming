@@ -11,10 +11,9 @@ size_t _strlen(char *s)
 {
 	size_t len = 0;
 
-        for ( ; *s != '\0'; s++)
-                len++;
-
-        return (len);
+	for ( ; *s != '\0'; s++)
+		len++;
+	return (len);
 }
 
 /**
