@@ -28,7 +28,7 @@ size_t _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd_dest;
+	int fd;
 	size_t len;
 	ssize_t count_write;
 
@@ -39,18 +39,18 @@ int create_file(const char *filename, char *text_content)
 		text_content = "";
 
 	/* open a filename, create it if not exist */
-	fd_dest = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
-	if (fd_dest == -1)
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fd == -1)
 		return (-1);
 
 	/* find bytes in text_content */
 	len = _strlen(text_content);
 
 	/* write from buffer to filename */
-	count_write = write(fd_dest, text_content, (len + 1));
+	count_write = write(fd, text_content, (len + 1));
 	if (count_write == -1)
 		return (-1);
 
-	close(fd_dest);
+	close(fd);
 	return (1);
 }
