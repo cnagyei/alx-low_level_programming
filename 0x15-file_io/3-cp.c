@@ -42,17 +42,17 @@ int main (int argc, char **argv)
 	fd_source = open(argv[1], O_RDONLY);
 	if (fd_source == -1)
 	{
-		exit (98);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 				argv[1]);
+		exit (98);
 	}
 
 	/* open destination file into file descriptor table */
 	fd_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	if (fd_dest == -1)
 	{
-		exit (99);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit (99);
 	}
 
 	/* allocate memory for buffer */
@@ -63,9 +63,9 @@ int main (int argc, char **argv)
 	read_from_source = read(fd_source, buffer, 1024);
 	if (read_from_source == -1)
 	{
-		exit (98);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 				argv[1]);
+		exit (98);
 	}
 
 	/* check length of source file */
@@ -75,21 +75,21 @@ int main (int argc, char **argv)
 	write_to_dest = write(fd_dest, buffer, len);
 	if (write_to_dest == -1)
 	{
-		exit (99);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit (99);
 	}
 
 	close_source = close(fd_source);
 	if (close_source == -1)
 	{
-		exit (100);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_source);
+		exit (100);
 	}
 	close_dest = close(fd_dest);
 	if (close_dest == -1)
 	{
-		exit (100);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_dest);
+		exit (100);
 	}
 
 	free(buffer);
