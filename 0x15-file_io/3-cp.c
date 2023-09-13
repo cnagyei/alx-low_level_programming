@@ -77,7 +77,6 @@ void error_write_dest(int write_dest, char **argv)
 int main(int argc, char **argv)
 {
 	int fd_source, fd_dest, close_source, close_dest;
-	size_t len;
 	ssize_t read_source, write_dest;
 	char *buffer;
 
@@ -86,21 +85,23 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	/* open source file into file descriptor table  - should be O_RDONLY*/
+
 	fd_source = open(argv[1], O_RDONLY);
 	error_fd_source(fd_source, argv);
-	/* open destination file into file descriptor table */
+
 	fd_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	error_fd_dest(fd_dest, argv);
 	buffer = malloc(sizeof(char) * 1024);
-	/* read content from fd_source into buffer */
-	read_source = read(fd_source, buffer, 1024);
-	error_read_source(read_source, argv);
-	/* check length of source file */
-	len = _strlen(buffer);
-	/* write content from souce file into destination file in fd table*/
-	write_dest = write(fd_dest, buffer, len);
-	error_write_dest(write_dest, argv);
+
+	read_source = 1024;
+	while (read_source == 1024)
+	{
+		read_source = read(fd_source, buffer, 1024);
+		error_read_source(read_source, argv);
+		write_dest = write(fd_dest, buffer, read_source);
+		error_write_dest(write_dest, argv);
+	}
+
 	close_source = close(fd_source);
 	if (close_source == -1)
 	{
