@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	int fd_source, fd_dest, close_source, close_dest;
 	size_t len;
 	ssize_t read_from_source, write_to_dest;
-	char buffer[1024];
+	char *buffer;
 
 	if (argc != 3)
 	{
@@ -50,6 +50,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
+	buffer = malloc(sizeof(char) * 1024);
 	/* read content from fd_source into buffer */
 	read_from_source = read(fd_source, buffer, 1024);
 	if (read_from_source == -1)
@@ -79,6 +80,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_dest);
 		exit(100);
 	}
+	free(buffer);
 	return (0);
 }
 
