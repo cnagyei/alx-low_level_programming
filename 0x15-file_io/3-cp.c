@@ -26,7 +26,7 @@ size_t _strlen(char *s)
 int main(int argc, char **argv)
 {
 	int fd_source, fd_dest, close_source, close_dest;
-	/* size_t len; */
+	size_t len;
 	ssize_t read_from_source, write_to_dest;
 	char buffer[1024];
 
@@ -59,9 +59,9 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	/* check length of source file */
-	/* len = _strlen(buffer); */
+	len = _strlen(buffer);
 	/* write content from souce file into destination file in fd table*/
-	write_to_dest = write(fd_dest, buffer, 1024);
+	write_to_dest = write(fd_dest, buffer, len);
 	if (write_to_dest == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
