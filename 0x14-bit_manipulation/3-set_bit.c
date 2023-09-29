@@ -47,21 +47,22 @@ int set_bit(unsigned long int *n, unsigned int index)
 		}
 		i--;
 	}
-	if (index > (loop_index - 1))
+	loop_index -= 1;
+	if (index > loop_index)
 		return (-1);
-	buffer[loop_index - 1 - index] = 1;
+	buffer[loop_index - index] = 1;
 
-	for (i = 0; (unsigned int)i < loop_index; i++)
+	for (i = 0; (unsigned int)i <= loop_index; i++)
 	{
-		if ((buffer[i] = 1))
+		if ((buffer[i] == 1))
 		{
-			for (k = (loop_index - 1 - i); k > 1; k--)
+			for (k = loop_index - i; k > 1; k--)
 				exp *= 10;
 			if (k == 1)
 				exp = 10;
 			if (k == 0)
 				exp = 1;
-			*ptr += 1 * exp;
+			new += 1 * exp;
 		}
 	}
 	n = ptr;
