@@ -9,9 +9,9 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int sum 2;
+	unsigned long int sum = 2;
 	int i = 1, j, cum = 0;
-	unsigned int loop_index = 0, bit_value;
+	unsigned int loop_index = 0;
 	int buffer[1000];
 
 	if (n == 0)
@@ -46,7 +46,7 @@ int get_bit(unsigned long int n, unsigned int index)
 		}
 		i--;
 	}
-	index = loop_index - 1 - index;
-	bit_value = buffer[index];
-	return (bit_value);
+	if (index > (loop_index - 1))
+		return (-1);
+	return (buffer[loop_index - 1 - index]);
 }
