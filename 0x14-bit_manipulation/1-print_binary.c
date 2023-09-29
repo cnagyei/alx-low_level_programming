@@ -15,23 +15,27 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 	if (n == 1)
 		_putchar('1');
+
+	/* move 2 to the higest power */
 	i = 1;
 	sum = 2;
 	while ((sum * 2) <= n)
 	{
-		sum *= 2; /* move 2 to the highest power */
+		sum *= 2;
 		i++;
 	}
 	/* check from higest power and descend */
-	while ((n != 0) && (n != 1) && (n > 0) && (i >= 0))
+	while ((n != 0) && (n != 1) && (i >= 0))
 	{
+		/* calculate powers of 2 */
 		sum = 2;
 		for (j = i ; j > 1; j--)
-			sum *= 2; /* calculate powers of 2 */
+			sum *= 2;
 		if (i == 1)
 			sum = 2;
 		if (i == 0)
 			sum = 1;
+
 		/* accumulate total and check if equal or less than n */
 		if ((cum + sum) <= n)
 		{
