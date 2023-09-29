@@ -11,9 +11,9 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int sum = 2;
-	int i = 1, j, cum = 0;
+	int i = 1, j, k, cum = 0;
 	unsigned int loop_index = 0;
-	unsigned long int buffer[1000], new, *ptr = &new;
+	unsigned long int buffer[1000], new, exp = 10, *ptr = &new;
 
 	if (*n == 0)
 		buffer[loop_index] = 0;
@@ -50,5 +50,20 @@ int set_bit(unsigned long int *n, unsigned int index)
 	if (index > (loop_index - 1))
 		return (-1);
 	buffer[loop_index - 1 - index] = 1;
-	return (buffer[loop_index - 1 - index]);
+
+	for (i = 0; (unsigned int)i < loop_index; i++)
+	{
+		if ((buffer[i] = 1))
+		{
+			for (k = (loop_index - 1 - i); k > 1; k--)
+				exp *= 10;
+			if (k == 1)
+				exp = 10;
+			if (k == 0)
+				exp = 1;
+			*ptr += 1 * exp;
+		}
+	}
+	n = ptr;
+	return (1);
 }
