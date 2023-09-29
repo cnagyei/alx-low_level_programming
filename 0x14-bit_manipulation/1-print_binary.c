@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 		i++;
 	}
 	/* check from higest power and descend */
-	while ((n != 0) && (n != 1) && (i >= 0))
+	while ((n != 0) && (n != 1) && (n > 0) && (i >= 0))
 	{
 		sum = 2;
 		for (j = i ; j > 1; j--)
