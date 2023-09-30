@@ -9,7 +9,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int sum;
-	int i, j, cum = 0;
+	long int i, j, cum = 0;
 
 	if (n == 0)
 		_putchar('0');
