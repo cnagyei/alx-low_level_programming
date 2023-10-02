@@ -36,7 +36,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content == NULL)
 		text_content = "";
 
-	/* open a filename, don't create it if not exist */
+	/* open a filename in APPEND mode, don't create it if not exist */
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);

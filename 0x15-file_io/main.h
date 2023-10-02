@@ -14,20 +14,4 @@ void error_fd_dest(int fd_dest, char **argv);
 void error_read_source(int read_source, char **argv);
 void error_write_dest(int write_dest, char **argv);
 
-/**
- * _strlen - Returns the length of a string.
- *
- * @s: Pointer to the variable holding the string.
- *
- * Return: Length of string as int.
- */
-size_t _strlen(char *s)
-{
-	size_t len = 0;
-
-	for ( ; *s != '\0'; s++)
-		len++;
-	return (len);
-}
-
 #endif /* MAIN_H */
