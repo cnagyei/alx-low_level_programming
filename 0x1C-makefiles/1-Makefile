@@ -3,5 +3,5 @@ SRC = $(wildcard *.c)
 
 all: output
 
-output: $(SRC)
+output: 
 	$(CC) $(SRC) -o school
