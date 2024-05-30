@@ -1,0 +1,12 @@
+# Usage:
+# make		# compile all binary
+# make clean	# remove ALL binaries and objects
+
+.PHONY = all clean
+
+CC = gcc
+
+LINKERFLAG = -lm
+
+SRCS := $(wildcard *.c)
+BINS := $(SRCS:%I.c=)
