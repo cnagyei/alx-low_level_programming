@@ -1,7 +1,10 @@
 CC = gcc
-SRC = $(wildcard *.c)
 
-all: output
+LINKERFLAG = -lm
 
-output: 
+SRC := $(wildcard *.c)
+
+all: school
+
+school: 
 	$(CC) $(SRC) -o school
