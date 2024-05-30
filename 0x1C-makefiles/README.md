@@ -251,6 +251,7 @@ guillaume@ubuntu:~/0x1C$ ./5-main.py
 guillaume@ubuntu:~/0x1C$
 ```
 
+### 6. make -f 100-Makefile
 Requirements:
 
 - name of the executable: `school`
