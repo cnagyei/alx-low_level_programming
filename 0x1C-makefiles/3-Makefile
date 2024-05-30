@@ -8,13 +8,13 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ *.bak *.orig *.swp *.vim $(NAME)
+	$(RM) -f *~ *.bak *.orig *.swp *.vim $(NAME)
 
 oclean:
-	$(RM) *.o
+	$(RM) -f $(OBJ)
 
 fclean:
-	$(RM) *~ *.bak *.orig *.swp *.vim $(NAME) *.o
+	$(RM) -f *~ *.bak *.orig *.swp *.vim $(NAME) *.o
 
 re: $(SRC)
 	$(CC) $(SRC) -o $(NAME)
