@@ -16,6 +16,4 @@ oclean:
 fclean:
 	$(RM) -f *~ *.bak *.orig *.swp *.vim $(NAME) $(OBJ)
 
-re: $(SRC)
-	$(CC) $(SRC) -o $(NAME)
-
+re: oclean all
